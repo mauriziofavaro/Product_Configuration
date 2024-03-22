@@ -6,7 +6,7 @@ La consegna prevede la progettazione e creazione di un visualizzatore/configurat
 
 ## Descrizione
 
- |![Webpage](pics/pagina_intera.png)|
+ ![Webpage](pics/pagina_intera.png)
 
  Il risultato finale di questo progetto è una rappresentazione di un'ipotetica pagina web del sito di e-commerce della ACME Corporation nella quale viene esposto un prodotto in vendita. Il prodotto in questione è una porta da interni, disponibile in diversi materiali. L'oggetto viene visualizzato tramite un modello 3d che può essere personalizzato dall'utente tramite gli appositi pulsanti: un potenziale cliente è in grado quindi di capire come si presenterebbe la porta scegliendo tra le varie opzioni a disposizione.
 
@@ -49,7 +49,7 @@ Si è deciso anche di inserire la possibilità di nascondere il telaio per mostr
 
 La pagina è stata progettata in modo da potersi adattare anche agli schermi degli smartphone, sfruttando soprattutto gli strumenti di W3.CSS che consentono di creare un design responsivo. Sfruttando la forma vertiacale della porta, si è deciso di lasciare spazio a destra dell'oggetto per rendere più comodo lo scorrimento della pagina usando le dita (*qui sotto: alcune schermate della pagina visualizzata su uno smartphone*).
 
-|![ResultMobile](pics/pagina_mobile.png)|
+![ResultMobile](pics/pagina_mobile.png)
 
 Il progetto è stato sviluppato con un notebook ASUS VivoBook Pro 15 N580VD-FI523T con le seguenti caratteristiche:
 - processore Intel Core i7-7700hq (2.8 ghz)

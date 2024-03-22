@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Maurizio Favaro-2nd Project 2019</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> <!-- ACME font -->
+    <style>
+
+    body {
+      font-family: 'Acme';
+      font-size: 20px;
+    }
+
+    h1 {
+      font-family: 'Acme';
+    }
+
+    h2 {
+      font-family: 'Acme';
+    }
+
+    h3 {
+      font-family: 'Acme';
+    }
+
+    h5 {
+      font-family: 'Acme';
+      font-size: 18px;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      font-family: Arial;
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-family: Arial;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      font-family: Arial;
+    }
+
+    </style>
+  </head>
+  <body onload="mainFunction()">
+    <div class="w3-bar w3-amber">
+      <a class="w3-bar-item w3-button w3-large w3-mobile">
+        <img src="pics/Acme-corp.png" style="width:149px; height:68px; border:0;">
+      </a>
+      <a class="w3-bar-item w3-mobile">
+        <input class="w3-input w3-border w3-mobile w3-round-large" style="margin-top:14px;" type="text" placeholder="Cosa stai cercando?">
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-round-large w3-mobile w3-padding-small w3-border" style="font-size:22px; margin-top:23px; background-color:#F7EDD4;">
+        <i class="material-icons" style="font-size:24px; vertical-align:-5px;">search</i>
+        Cerca
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Home</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Offerte</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Novità</a>
+      <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-mobile" style="margin-top:21px;">Categorie</a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-mobile" style="margin-top:21px; font-size:24px">Carrello
+        <i class="material-icons" style="font-size:24px; vertical-align:-4px;">shopping_cart</i>
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-mobile" style="margin-top:21px; font-size:24px">Accedi
+        <i class="material-icons" style="font-size:24px; vertical-align:-4px;">account_box</i>
+      </a>
+    </div>
+
+    <div class="w3-row-padding">
+      <h2 style="font-size: 38px;">Porta da interni ACME</h2>
+    <div class="w3-container w3-half">
+      <div id="canvas-container" style="width: 45vw; height: 600px; background: white;"></div>
+      <h3>Fai zoom e ispeziona l'oggetto tenendo premuto per ruotare l'immagine</h3>
+      <h5>Dimensioni: altezza 215cm - larghezza 70cm - spessore 4,5cm - profondità telaio 25cm</h5>
+    </div>
+    <div class="w3-container w3-half" style="float: right">
+      <h2>Personalizza</h2>
+      <h3>Porta</h3>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('walnut')">
+        <img src="textures/Wood29_col.jpg" style="width: 40px; height: 40px;">
+        <p>noce</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('mahogany')">
+        <img src="textures/Mahogany_col.jpg" style="width: 40px; height: 40px;">
+        <p>mogano</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('pine')">
+        <img src="textures/Wood_011_col.jpg" style="width: 40px; height: 40px;">
+        <p>pino</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('bamboo')">
+        <img src="textures/bamboo_col.jpg" style="width: 40px; height: 40px;">
+        <p>bambù</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('zinc')">
+        <img src="pics/zinc.png" style="width: 40px; height: 40px;">
+        <p>zincata</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeDoorMaterial('gold')">
+        <img src="pics/gold.png" style="width: 40px; height: 40px;">
+        <p>dorata</p>
+      </div>
+      <br>
+      <h3>Maniglia</h3>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeHandleMaterial('gold')">
+        <img src="pics/gold.png" style="width: 40px; height: 40px;">
+        <p>dorata</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeHandleMaterial('zinc')">
+        <img src="pics/zinc.png" style="width: 40px; height: 40px;">
+        <p>zincata</p>
+      </div>
+      <div class="w3-btn w3-white w3-border w3-ripple w3-medium" onclick="changeHandleMaterial('plastic')">
+        <img src="textures/Plastic_col.jpg" style="width: 40px; height: 40px;">
+        <p>plastica</p>
+      </div>
+      <br>
+      <h3>Nascondi/Mostra telaio</h3>
+      <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="hideFrame()">nascondi</button>
+      <button class="w3-button w3-white w3-border w3-medium" style="font-size : 12px;" onclick="showFrame()">mostra</button>
+      <br>
+      <br>
+      <p id="price" class="w3-padding" style="font-size : 24px; border-style: solid; display:inline;">Prezzo: 235.98 €</p>
+      <br>
+      <br>
+      <form style="vertical-align: center">
+        Quantità:
+        <input type="number" name="quantity" min="1" max="10" step="1" value="1">
+        <button class="w3-button w3-amber w3-border">Aggiungi al carrello
+          <i class="material-icons" style="font-size:24px; vertical-align:-4px;">shopping_cart</i>
+        </button>
+      </form>
+      <p>Spedizione GRATUITA in tutta Italia con servizio di consegna ACME</p>
+      <br>
+    </div>
+    </div>
+    <div class="w3-container" style="font-family: Arial; font-size:18px;">
+      <p>
+        Porta da interni ACME con comoda apertura destra a battente.
+        Prodotto di alta qualità personalizzabile con i diversi materiali disponibili per soddisfare
+        ogni esigenza. Le dimensioni della luce necessarie per l'installazione sono di 215 cm di
+        altezza e di 70 cm di larghezza.
+        <br>
+        La porta è tamburata in legno massello (a scelta tra noce, mogano, pino o bambù) oppure in
+        acciaio (zincato o dorato).
+        <br>
+        La maniglia è disponibile in acciaio dorato, zincato o in
+        plastica nera. Lo scrocco della serratura viene offerto dello stesso materiale della
+        maniglia (NOTA: in caso di maniglia in plastica lo scrocco fornito sarà in acciaio zincato).
+        <br>
+        Il peso del prodotto varia in base al materiale:
+        <br>
+        -noce 25kg;
+        <br>
+        -mogano 27kg;
+        <br>
+        -pino 22kg;
+        <br>
+        -bambù 23kg.
+        <br>
+        -acciaio 39kg;
+        <br>
+        Il telaio e la maniglia sono compresi nel prezzo di vendita.
+        Spedizione GRATUITA in tutta Italia con servizio di consegna ACME.
+      </p>
+      <h3>Dettagli prodotto</h3>
+      <table class="w3-table-all" style="width: 300px; font-size:16px;">
+        <tr>
+          <td>Altezza</td>
+          <td>210 cm</td>
+        </tr>
+        <tr>
+          <td>Larghezza</td>
+          <td>60 cm</td>
+        </tr>
+        <tr>
+          <td>Spessore porta</td>
+          <td>4,5 cm</td>
+        </tr>
+        <tr>
+          <td>Altezza esterna telaio</td>
+          <td>215 cm</td>
+        </tr>
+        <tr>
+          <td>Larghezza esterna telaio</td>
+          <td>70 cm</td>
+        </tr>
+        <tr>
+          <td>Profondità telaio</td>
+          <td>25 cm</td>
+        </tr>
+        <tr>
+          <td>Peso</td>
+          <td>22-39 Kg</td>
+        </tr>
+        <tr>
+          <td>Apertura</td>
+          <td>A battente</td>
+        </tr>
+        <tr>
+          <td>Senso di apertura</td>
+          <td>Destra</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- librerie -->
+    <script src="lib/three.min.js"></script>
+    <script src="lib/OrbitControls.js"></script>
+    <script src="lib/OBJLoader.js"></script>
+    <!--<script src="lib/stats.min.js"></script>-->
+
+    <script src="scripts/lightsSetup.js"></script>
+
+
+    <!-- shaders metals -->
+
+		<script type="text/x-glsl" id="vertex">
+		varying vec3 vNormal;
+		varying vec3 vPosition;
+
+		void main() {
+			vec4 vPos = modelViewMatrix * vec4( position, 1.0 );
+			vPosition = vPos.xyz;
+			vNormal = normalMatrix * normal;
+			gl_Position = projectionMatrix * vPos;
+		}
+		</script>
+
+		<script type="text/x-glsl" id="fragment">
+			varying vec3 vNormal;
+			varying vec3 vPosition;
+			uniform vec3 pointLightPosition1; // in world space
+			uniform vec3 pointLightPosition2; // in world space
+			uniform vec3 pointLightPosition3; // in world space
+			uniform vec3 pointLightPosition4; // in world space
+			uniform vec3 clight;
+			uniform vec3 cspec;
+			uniform float roughness;
+			const float PI = 3.14159;
+
+			vec3 FSchlick(float lDoth) {
+				return (cspec + (vec3(1.0)-cspec)*pow(1.0 - lDoth,5.0));
+			}
+
+			float DGGX(float nDoth, float alpha) {
+				float alpha2 = alpha*alpha;
+				float d = nDoth*nDoth*(alpha2-1.0)+1.0;
+				return (  alpha2 / (PI*d*d));
+			}
+
+			float G1(float dotProduct, float k) {
+				return (dotProduct / (dotProduct*(1.0-k) + k) );
+			}
+
+			float GSmith(float nDotv, float nDotl) {
+					float k = roughness*roughness;
+					return G1(nDotl,k)*G1(nDotv,k);
+			}
+
+			void main() {
+				vec4 lPosition = viewMatrix * vec4( pointLightPosition1, 1.0 );
+				vec3 l = normalize(lPosition.xyz - vPosition.xyz);
+				vec3 n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				vec3 v = normalize( -vPosition);
+				vec3 h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				float nDotl = max(dot( n, l ),0.000001);
+				float lDoth = max(dot( l, h ),0.000001);
+				float nDoth = max(dot( n, h ),0.000001);
+				float vDoth = max(dot( v, h ),0.000001);
+				float nDotv = max(dot( n, v ),0.000001);
+				vec3 specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance1 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition2, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance2 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition3, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance3 = PI* clight * nDotl * specularBRDF;
+
+				lPosition = viewMatrix * vec4( pointLightPosition4, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+				specularBRDF = FSchlick(lDoth)*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance4 = PI* clight * nDotl * specularBRDF;
+
+				vec3 outRadiance = outRadiance1 + outRadiance2 + outRadiance3 + outRadiance4;
+				// gamma encode the final value
+				gl_FragColor = vec4(pow( outRadiance, vec3(1.0/2.2)), 1.0);
+				//gl_FragColor = vec4(outRadiance,1.0);
+			}
+		</script>
+
+    <!-- shaders texture -->
+
+		<script type="text/x-glsl" id="vertex-texture">
+		varying vec3 vNormal;
+		varying vec3 vPosition;
+		varying vec2 uVv;
+
+		void main() {
+			vec4 vPos = modelViewMatrix * vec4( position, 1.0 );
+			vPosition = vPos.xyz;
+			vNormal = normalMatrix * normal;
+			uVv = uv;
+			gl_Position = projectionMatrix * vPos;
+		}
+		</script>
+
+		<script type="text/x-glsl" id="fragment-texture">
+			varying vec3 vNormal;
+			varying vec3 vPosition;
+			varying vec2 uVv;
+      uniform vec3 pointLightPosition1; // in world space
+			uniform vec3 pointLightPosition2; // in world space
+			uniform vec3 pointLightPosition3; // in world space
+			uniform vec3 pointLightPosition4; // in world space
+			uniform vec3 clight;
+			uniform sampler2D specularMap;
+			uniform sampler2D diffuseMap;
+			uniform sampler2D roughnessMap;
+			uniform vec2 textureRepeat;
+			const float PI = 3.14159;
+
+			vec3 cdiff;
+			vec3 cspec;
+			float roughness;
+
+			vec3 FSchlick(float lDoth) {
+				return (cspec + (vec3(1.0)-cspec)*pow(1.0 - lDoth,5.0));
+			}
+
+			float DGGX(float nDoth, float alpha) {
+				float alpha2 = alpha*alpha;
+				float d = nDoth*nDoth*(alpha2-1.0)+1.0;
+				return (  alpha2 / (PI*d*d));
+			}
+
+			float G1(float dotProduct, float k) {
+				return (dotProduct / (dotProduct*(1.0-k) + k) );
+			}
+
+			float GSmith(float nDotv, float nDotl) {
+					float k = roughness*roughness;
+					return G1(nDotl,k)*G1(nDotv,k);
+			}
+
+			void main() {
+        cdiff = texture2D( diffuseMap, uVv*textureRepeat ).rgb;
+				// texture in sRGB, linearize
+				cdiff = pow( cdiff, vec3(2.2));
+				cspec = texture2D( specularMap, uVv*textureRepeat ).rgb;
+				// texture in sRGB, linearize
+				cspec = pow( cspec, vec3(2.2));
+				roughness = texture2D( roughnessMap, uVv*textureRepeat).r; // no need to linearize roughness map
+
+				vec4 lPosition = viewMatrix * vec4( pointLightPosition1, 1.0 );
+				vec3 l = normalize(lPosition.xyz - vPosition.xyz);
+				vec3 n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				vec3 v = normalize( -vPosition);
+				vec3 h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				float nDotl = max(dot( n, l ),0.000001);
+				float lDoth = max(dot( l, h ),0.000001);
+				float nDoth = max(dot( n, h ),0.000001);
+				float vDoth = max(dot( v, h ),0.000001);
+				float nDotv = max(dot( n, v ),0.000001);
+
+				vec3 fresnel = FSchlick(lDoth);
+				vec3 BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance1 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition2, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance2 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition3, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance3 = PI* clight * nDotl * BRDF;
+
+
+        lPosition = viewMatrix * vec4( pointLightPosition4, 1.0 );
+				l = normalize(lPosition.xyz - vPosition.xyz);
+				n = normalize( vNormal );  // interpolation destroys normalization, so we have to normalize
+				v = normalize( -vPosition);
+				h = normalize( v + l);
+				// small quantity to prevent divisions by 0
+				nDotl = max(dot( n, l ),0.000001);
+				lDoth = max(dot( l, h ),0.000001);
+				nDoth = max(dot( n, h ),0.000001);
+				vDoth = max(dot( v, h ),0.000001);
+				nDotv = max(dot( n, v ),0.000001);
+
+				fresnel = FSchlick(lDoth);
+				BRDF = (vec3(1.0)-fresnel)*cdiff/PI + fresnel*GSmith(nDotv,nDotl)*DGGX(nDoth,roughness*roughness)/
+					(4.0*nDotl*nDotv);
+				vec3 outRadiance4 = PI* clight * nDotl * BRDF;
+
+
+        vec3 outRadiance = outRadiance1 + outRadiance2 + outRadiance3 + outRadiance4;
+				// gamma encode the final value
+				gl_FragColor = vec4(pow( outRadiance, vec3(1.0/2.2)), 1.0);
+			}
+		</script>
+
+
+    <script src=scripts/main.js></script>
+    <script src=scripts/materialMetal.js></script>
+    <script src=scripts/materialTexture.js></script>
+    <script src=scripts/getMaterials.js></script>
+    <script src=scripts/priceCalculator.js></script>
+
+
+    <br>
+    <br>
+    <div class="w3-row w3-center w3-small w3-amber w3-padding w3-mobile">
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>ACME Corporation</h5>
+          <a href="#" style="font-size: 14px;">Chi siamo</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Note legali</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Lavora con noi</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Spazio aziende</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Informazioni</h5>
+          <a href="#" style="font-size: 14px;">Metodi di pagamento</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Servizio di consegna ACME</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Garanzia clienti ACME</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Resi e sostituzioni</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Spazio vendita</h5>
+          <a href="#" style="font-size: 14px;">Vendere su ACME.com</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Garanzia venditori</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Tariffe Business</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Promozione prodotti</a>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 s12 w3-mobile">
+        <div class="top10">
+          <h5>Aiuto</h5>
+          <a href="#" style="font-size: 14px;">Servizio clienti</a>
+          <br>
+          <a href="#" style="font-size: 14px;">FAQ</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Forum</a>
+          <br>
+          <a href="#" style="font-size: 14px;">Contatti</a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-bar w3-amber"></div>
+
+  </body>
+</html>
